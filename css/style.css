@@ -1,16 +1,18 @@
-/* General Reset */
+
 * {
     margin: 0;
-    padding: 0;
+    padding: 1px;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif, 'Helvetica', 'Times New Roman';
     line-height: 1.6;
-   background: linear-gradient(135deg, #ffffff, #c86256, #368721);
-    color: #333;
+    background: linear-gradient(135deg, #ffffff, #1a1a1b, #4f4e60); /* Background gradient */
+    color: #221918; /* Default text color */
+    margin-top: 70px;
 }
+
 
 header {
     position: fixed;
@@ -38,107 +40,185 @@ header {
     display: inline;
 }
 
-.navbar ul li a {
-    text-decoration: none;
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(79, 78, 96); /* Slight transparency for a modern look */
     color: white;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Depth effect */
+    padding: 10px 20px; /* Better spacing */
+    display: flex; /* Align items in the header */
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space between logo and navigation */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
+
+header:hover {
+    background-color: #221918; /* Darker shade on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Deeper shadow effect */
+}
+
+header a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Spacing between links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+header a:hover {
+    color: #ffcc00; /* Accent color on hover */
+}
+
+header .logo {
+    font-size: 1.5em; /* Larger font size for logo */
+    font-weight: bold;
+}
+
+header .menu {
+    display: flex;
+    gap: 15px; /* Space between navigation items */
+}
+
 
 .navbar ul li a:hover {
     color: #FFD700;
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 10;
-
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* Text color for readability */
+    text-align: center; /* Center-align text */
+    padding: 15px 0; /* Increased padding for better spacing */
+    position: fixed; /* Fixed at the bottom */
+    width: 100%; /* Full-width footer */
+    bottom: 0; /* Stick to the bottom */
+    z-index: 10; /* Ensure it’s above other elements */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
+    font-size: 0.9em; /* Slightly smaller font size */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
 
-/* Home Page */
+footer a {
+    color: #ffcc00; /* Accent color for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Spacing between links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+footer a:hover {
+    color: white; /* Change link color on hover */
+}
+
+footer:hover {
+    background-color: #444; /* Slightly lighter background on hover */
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8em; /* Adjust font size for smaller screens */
+        padding: 10px; /* Reduce padding */
+    }
+}
+
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg,#4f4e60, #007BFF, #c86256);
-    color: white;
-    margin-top: 70px;
+    text-align: center; /* Center-align content for a balanced layout */
+    padding: 50px 20px; /* Add padding for spacing */
+    background: linear-gradient(to bottom, #007BFF, #0056b3); /* Subtle gradient background */
+    color: white; /* Text color for readability on a colored background */
+    border-radius: 10px; /* Optional rounded corners for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3rem; /* Larger font size for headlines */
+    margin-bottom: 20px;
+    line-height: 2.2; /* Better line spacing */
+    text-shadow: 2px 2px 5px rgb(199, 46, 46); /* Adds depth to the text */
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* More spacing below paragraph */
+    max-width: 600px; /* Restrict paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero .button {
     display: inline-block;
-    padding: 10px 20px;
-    background: white;
-    color: #007BFF;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 15px 30px; /* Larger button size for better visibility */
+    background: white; /* Keep it contrasting */
+    color: #007BFF; /* Primary color for text */
+    text-decoration: none; /* No underline */
+    border-radius: 50px; /* Fully rounded button for modern aesthetics */
     font-weight: bold;
-    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 1rem; /* Adjusted font size for balance */
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
 }
 
 .hero .button:hover {
-    background: #0056b3;
-    color: white;
+    background: #0056b3; /* Darker hover color for contrast */
+    color: white; /* Invert text color on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
+
 /* About Content */
 .about-content {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     margin-top: 70px;
     padding: 50px 20px;
+    gap: 20px; /* Adds consistent spacing between elements */
 }
 
 .about-text {
-    width: 50%;
-    padding-right: 20px;
+    width: 48%; /* Adjusted for better spacing */
+    padding-right: 100px;
+    flex: 1; /* Ensures flexibility for responsive design */
+
 }
 
 .about-text h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /*  larger for emphasis */
+    margin-bottom: 15px; /*  spacing */
+    color: #333; /* Darker shade for contrast */
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.2rem; /* Slightly larger for readability */
+    line-height: 1.8; /* Increased line height for better spacing */
+    color: #555; /* Fallback color for unsupported browsers */
+    background: linear-gradient(90deg,#ffffff,#dddddd ); /* Two-color gradient */
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    mix-blend-mode: lighten; /* Blends text with the background */
 }
+
+
 
 /* Image Slider */
 .image-slider {
-    width: 45%;
+    width: 48%; /* Matches about-text width */
     overflow: hidden;
     position: relative;
+    border-radius: 20px; /* Optional: Adds rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds depth */
+    flex: 1; /* Ensures flexibility */
 }
 
 .slider-track {
     display: flex;
-    width: calc(100%);
-    animation: slide 40s linear infinite;
-
+    animation: slide 20s linear infinite; /* Shortened duration for better engagement */
 }
 
 .slider-track img {
-    width: 50%;
-    height: 50%;
-    margin: 0 auto;
-    border-radius: 500px;
+    width: 100%; /* Full width within the slider */
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+    border-radius: 15px; /* Optional: Matches container rounding */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -158,66 +238,75 @@ footer {
     }
 }
 
-/* Skills Page */
-.skills {
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 70px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: center; /* Centers content */
+        gap: 30px; /* Increases spacing for smaller screens */
+    }
 
+    .about-text, .image-slider {
+        width: 100%; /* Full width on smaller screens */
+        padding: 0;
+    }
+
+    .about-text h1 {
+        font-size: 2rem; /* Adjust headline size for mobile */
+    }
+
+    .about-text p {
+        font-size: 1rem; /* Adjust paragraph size for mobile */
+    }
 }
+
 /* Skills Section */
 .skills {
     padding: 50px 20px;
     text-align: center;
-}
-
-.skill {
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
-}
-
-.skill h2 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.progress-bar {
-    background: #f4f4f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    height: 20px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.progress {
-    background: #007BFF;
-    height: 100%;
-    border-radius: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: width 0.5s ease;
-}
-
-
-.skills ul {
-    list-style: none;
+    margin-top: 70px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.skills ul li {
-    background: #4f4e60;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+/* Skill Card */
+.skill-card {
+    background: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill Icon */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Skill Card Content */
+.skill-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
 
 /* Projects Page */
 .projects {
@@ -324,10 +413,50 @@ footer {
     color: #fff;
     background-color: #007bff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 35px;
     transition: background-color 0.3s;
 }
 
 .download-button:hover {
     background-color: #0056b3;
 }
+
+/* General Section Styling */
+.section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+/* Box Styling */
+.box {
+    background: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Education Box Styling */
+.education-box {
+    background: white;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
